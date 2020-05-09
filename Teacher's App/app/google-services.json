@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "515950621875",
+    "firebase_url": "https://teacher-a2b90.firebaseio.com",
+    "project_id": "teacher-a2b90",
+    "storage_bucket": "teacher-a2b90.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515950621875:android:f69951e4b4bbf8384a2cc6",
+        "android_client_info": {
+          "package_name": "com.example.teacher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515950621875-5likgsvmvi9rn1o9c23ose9dgd46f8u1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teacher",
+            "certificate_hash": "7ebffa58f7c0dd758618d285e92211891f847353"
+          }
+        },
+        {
+          "client_id": "515950621875-o9f09cuvtejr2muoel3coc00310kcfal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhn4u7MTGp7tfAD0V_ASnv9fpfGrPb3A8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515950621875-o9f09cuvtejr2muoel3coc00310kcfal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
