@@ -2,17 +2,14 @@
 This repository contains the android projects that I developed as a beginner.
 
 ## Nature of Projects
-There are certain building blocks of android development that every developer must know. This is a documentation of my process of learning to implement those building blocks.
+There are certain building blocks of android development that every developer must know. This is a documentation of my process of learning to implement those building blocks. The building blocks of respective apps are mentioned in bullet points below.
 
 1. [Convert Kilometers to Miles and vice versa](ConvertMilesToKm/ConvertMilesToKm)
 
-#Fearures:
 - Takes input from the user via a widget and processes it.
 
 2. [Percentage Calculator](percentage_calculator)
 
-This is an example of an app that:
-#Features:
 - SMS sending
 - Multiple activities that the user can navigate through
 - Asks for permission to send SMS from the user once the app in installed 
@@ -21,7 +18,6 @@ This is an example of an app that:
 
 3. [RedGreenBlue](RedGreenBlue)
 
-#Features:
 - Seekbar
 - Use of ImageView
 - Change in RGB value of the Image
