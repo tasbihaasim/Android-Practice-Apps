@@ -5,7 +5,7 @@ This repository contains the android projects that I developed as a beginner.
 There are certain building blocks of android development that every developer must know. This is a documentation of my process of learning to implement those building blocks.
 
 1. [Convert Kilometers to Miles and vice versa](ConvertMilesToKm/ConvertMilesToKm)
-This is an example of an app that takes input from the user via a widget and processes it.
+- This is an example of an app that takes input from the user via a widget and processes it.
 
 2. [Percentage Calculator](percentage_calculator)
 This is an example of an app that:
