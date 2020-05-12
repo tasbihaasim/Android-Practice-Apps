@@ -1,0 +1,2166 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta name="theme-color" content="#323754">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9b2cefefd1",applicationID:"672553708"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"9b2cefefd1","agent":"","transactionName":"MlwDZxBYVxUHWkNcVwsWJ0YMWk0PCVcYRUoKWw1WD0oXEA9cQEYCFUsAUBZQWgM5SkJXZxFWEVoBZk0TElZFXFkJ","applicationID":"672553708,561796461","errorBeacon":"bam.nr-data.net","applicationTime":217}</script>
+        <meta name="description" content="
+Detailed tutorial on Trie (Keyword Tree) to improve your understanding of Data Structures. Also try practice problems to test & improve your skill level.
+" >
+        <link rel="canonical" href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/" />
+        <meta name="msvalidate.01" content="1BF418E510B5A17A2D71685C571BF4EB" />
+
+        
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        
+
+        
+        <script>
+          (function() {
+              if (window.BOOMR && window.BOOMR.version) {
+                  return;
+              }
+              var dom, doc, where, iframe = document.createElement("iframe"),
+                  win = window;
+
+              function boomerangSaveLoadTime(e) {
+                  win.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+              }
+              if (win.addEventListener) {
+                  win.addEventListener("load", boomerangSaveLoadTime, false);
+              } else if (win.attachEvent) {
+                  win.attachEvent("onload", boomerangSaveLoadTime);
+              }
+
+              iframe.src = "javascript:false";
+              iframe.title = "";
+              iframe.role = "presentation";
+              (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display: none;";
+              where = document.getElementsByTagName("script")[0];
+              where.parentNode.insertBefore(iframe, where);
+
+              try {
+                  doc = iframe.contentWindow.document;
+              } catch (e) {
+                  dom = document.domain;
+                  iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                  doc = iframe.contentWindow.document;
+              }
+              doc.open()._l = function() {
+                  var js = this.createElement("script");
+                  if (dom) this.domain = dom;
+                  js.id = "boomr-if-as";
+                  js.src = "https://s.go-mpulse.net/boomerang/" +
+                      "QKZWA-3BVYP-7W6XK-6HKWZ-EFFZ4";
+                  BOOMR_lstart = new Date().getTime();
+                  this.body.appendChild(js);
+              };
+              doc.write('<body onload="document._l();">');
+              doc.close();
+          })();
+        </script>
+        
+
+
+        
+<meta name="google-site-verification" content="ozqyeStBcz4eehbY9Ohb_IUQcA4y8BKzzDCT-H1QPPc" />
+
+
+        
+        
+        <!-- google analytics start -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34729975-1', 'auto');
+            ga('require', 'displayfeatures');
+            
+            ga('send', 'pageview');
+        </script>
+        <!-- google analytics end -->
+        
+        
+
+        
+        
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PBHB3B9');
+        </script>
+        <!-- End Google Tag Manager -->
+        
+        
+
+        <title>  Trie (Keyword Tree) Tutorials & Notes | Data Structures | HackerEarth  </title>
+
+        
+<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1">
+<!-- Facebook tags -->
+<meta property="og:title" content="Trie (Keyword Tree) Tutorials & Notes | Data Structures | HackerEarth"/>
+<meta property="og:image" content="https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_cover.jpg" />
+<meta property="og:description" content="Detailed tutorial on Trie (Keyword Tree) to improve your understanding of Data Structures. Also try practice problems to test & improve your skill level."/>
+<meta property="og:url" content="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/"/>
+<meta property="og:site_name" content="HackerEarth"/>
+<meta property="og:type" content="website"/>
+<!-- end Facbook tags -->
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@HackerEarth"/>
+<meta name="twitter:url" content="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/"/>
+<meta name="twitter:title" content="Trie (Keyword Tree) Tutorials & Notes | Data Structures | HackerEarth"/>
+<meta name="twitter:description" content="Detailed tutorial on Trie (Keyword Tree) to improve your understanding of Data Structures. Also try practice problems to test & improve your skill level."/>
+<!-- end Twitter tags -->
+
+        
+        <link rel="shortcut icon" href="https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_identity.png" type="image/x-icon">
+        
+
+        
+
+        
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/base_common_combined.0feee09ea767.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/marketing_footer.20caf7067b08.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/js/tooltip/tipTip.4cc4f68d44b4.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/offline/offline-theme-slide.12bc3d4c96b4.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/font-awesome-4.7.0/css/font-awesome.min.269550530cc1.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/opensans/opensans.06e0aa7529dc.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/proxima-nova/proxima-nova.e287a58ab14e.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/hack/hack.8b30169f8a8b.css"/>
+            <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/unicons.9eda5fc182c1.css"/>
+        
+
+        
+
+
+        
+
+        <!-- Make the static variable available for all js files -->
+        <script>
+            var STATIC_URL = "https://static-fastly.hackerearth.com/static/";
+        </script>
+
+        <!-- Store CSRF_COOKIE -->
+        <script>
+            var CSRF_COOKIE_USED = "True";
+            var CSRF_COOKIE = "D93Fm9LkMhUdf9sDVpIChjgkNBqSEwHolpiAT96V6xrhNyBeFYcxa7GHN14nZFIV";
+        </script>
+
+        
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/hackathon/problem1.39afca75d370.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/hackathon/editor1.ce045642f161.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/sub-editor/vendors.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/sub-editor/sub-editor.ea7011790992.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/google-code-prettify/prettify.26e70f1bc891.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/problems/practice_track1.d532b98eaf19.css"/>
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/problems/fullscreen.5e00920beec4.css"/>
+<script type="application/id+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Tutorial",
+  "headline": "Trie (Keyword Tree)",
+  "author": {
+    "@type": "Person",
+    "name": "Anand Jaisingh",
+    },
+  "category": "Data Structures, Advanced Data Structures",
+  "datePublished": "24 Apr 2016"
+}
+</script>
+
+
+    </head>
+
+    <body >
+        
+            
+            
+        
+        
+        
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBHB3B9"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        
+        
+
+        <!-- Placeholder for any alert message on the site -->
+        
+        <div id="alert-message-holder">
+            
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            <div class="alert-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- end alert-message-holder -->
+
+        <!-- Placeholder for any error message on the site -->
+        
+        <div id="error-message-holder">
+            
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            <div class="error-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- end error-message-holder -->
+        
+        
+
+        
+    <div id="top-prompt-container" class="hidden prompt-container"></div>
+    <div id="right-prompt-container" class="hidden prompt-container"></div>
+    <div id="center-modal-prompt-container" class="hidden prompt-container"></div>
+    
+    
+        
+        <header class="header">
+            <i class="fa fa-bars mobile-menu-btn"></i>
+            <nav class="navigation">
+                
+                <a href="https://www.hackerearth.com" class="logo logo-h-terminal  no-underline float-left track-header-logo"></a>
+                
+
+                
+                <ul class="nav-bar no-padding float-left tablet-hide">
+                    <!-- challenges page -->
+                    <li id="challenges" class="nav-bar-menu "><a class="track-header-challenges" href="https://www.hackerearth.com/challenges/">CHALLENGES</a></li>
+                    <!-- hackathons page -->
+                    
+                    <!-- practice page -->
+                    <li id="problems" class="nav-bar-menu selected"><a class="track-header-problems" href="https://www.hackerearth.com/practice/">PRACTICE</a></li>
+                    <!-- companies page -->
+                    <li id="companies" class="nav-bar-menu "><a class="track-header-companies" href="https://www.hackerearth.com/companies/">COMPANIES</a></li>
+                </ul>
+                <ul class="nav-bar right-nav-bar no-padding float-right tablet-hide">
+                    
+                    
+                    <li id="searchbar">
+                        <div id="search-icon-container" class="float-left">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input id="searchbar-input" class="float-left" type="text" value="" name="q" autocomplete="off" spellcheck="false" placeholder="Search developers, problems, etc" ajax1="/search/AJAX/search/" ajax2="/search/search-results/" ></input>
+                        <div id="search-dropdown"></div>
+                    </li>
+                    
+                    
+
+                    
+
+                    
+
+
+                    
+
+                    
+
+                    
+                    <li class="nav-bar-menu login-menu-btn"><a target="login-modal" class="track-header-login show-modal">LOGIN</a></li>
+                    <li class="nav-bar-menu signup-menu-btn"><a target="login-modal" class="track-header-signup show-modal show-signup-in-modal">SIGN UP</a></li>
+                    
+
+                    <div class="clear"></div>
+                </ul> <!-- nav-bar -->
+                <div class="clear"></div>
+                
+            </nav> <!-- navigation -->
+
+            <i class="fa fa-filter challenge-filter-btn hidden"></i>
+
+        </header> <!-- header -->
+        
+    
+     <style>
+  #gdpr-modal {
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+<div id="gdpr-modal" class="modal-window smaller-modal hidden">
+  
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+  
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+  
+<div class="modal-header">HackerEarth’s Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+    
+
+    
+    
+    <div class="top-banner">
+        <p class="banner-text login-banner dark">
+        
+         Signup and get free access to 100+ Tutorials and Practice Problems <a class="button btn-orange-bright inline-block medium-margin-left show-modal show-signup-in-modal" target="login-modal">Start Now</a>
+        
+        </p>
+    </div>
+    
+    
+
+    
+
+    <div id="comment-share-modal" class="modal-window small-modal">
+        <div class="modal-header">
+            Comment permalink
+        </div>
+        <div class="modal-content">
+            <div class="comment-share-wrapper align-center">
+                <textarea class="comment-share-text" type="textbox" rows="4" readonly="readonly" onclick="this.select();"></textarea>
+            </div>
+        </div>
+    </div>
+
+    
+    
+
+    
+    <!-- live events widget -->
+    <div id="live-events-trigger-data"></div>
+    
+
+    <!-- This is the center page which has a fixed width of 1100px -->
+    
+<div class="layout-container">
+    <div class="gray-wide-container problem-track">
+        <div class="breadcrumb dark small no-margin">
+            <a href="/practice/" class="link-color"> All Tracks</a>
+            <i class="light fa fa-angle-right"></i>
+            <a href="/practice/data-structures/" class="link-color no-underline"> Data Structures</a>
+            <i class="light fa fa-angle-right"></i>
+            <a href="/practice/data-structures/advanced-data-structures/" class="link-color no-underline"> Advanced Data Structures</a>
+            <span class="dark sub-topic-name">
+                <i class="light fa fa-angle-right"></i>
+                <span class="sub-topic light weight-400">Trie (Keyword Tree)</span>
+            </span>
+        </div>
+
+        <div class="left-section border-radius-3 light float-left small">
+            
+
+
+
+<div class="left-section-track-card">
+    <div class="track-name-card">
+        <div class="track-logo">
+            <img src="https://static-fastly.hackerearth.com/static/images/practice_tracks/data-structures@2x.png" class="track-icon" alt="Data Structures">
+        </div>
+        <div class="track-name">
+            <span class="larger-24 dark"> Data Structures</span>
+        </div>
+        <div class="clear"></div>
+        <!-- <div class="light regular less-margin-2">
+            <i class="fa fa-line-chart"></i><span class="less-padding-2-left">09 <span class="small">points more to improve your rank</span></span>
+        </div> -->
+    </div>
+    
+    <div class="leaderboard-card align-center pagelet-inview" id="user-track-rank" ajax="/pagelets/user-anatomy-rank/190/" target="user-track-rank" loader="true">
+
+    </div>
+    
+</div>
+
+<div class="mobile-select-topic-container">
+    <span class="small light">Topics: </span>
+    <div class="current-topic-container show-modal ellipsis v-align-middle" target="topic-select-modal">
+        <span class="dark regular">Trie (Keyword Tree)</span>
+        <i class="fa fa-caret-down regular dark"></i>
+    </div>
+</div>
+
+<div id="topic-select-modal" class="modal-window large-modal">
+    <div class="modal-content">
+        <div class="subtrack-list-container mobile">
+            <ul class="subtrack-list no-list-style">
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Arrays
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/arrays/1-d/" class="block dark no-underline left-nav-link ellipsis">1-D</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/arrays/multi-dimensional/" class="block dark no-underline left-nav-link ellipsis">Multi-dimensional</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Stacks
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/stacks/basics-of-stacks/" class="block dark no-underline left-nav-link ellipsis">Basics of Stacks</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Queues
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/queues/basics-of-queues/" class="block dark no-underline left-nav-link ellipsis">Basics of Queues</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Hash Tables
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/hash-tables/basics-of-hash-tables/" class="block dark no-underline left-nav-link ellipsis">Basics of Hash Tables </a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Linked List
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/linked-list/singly-linked-list/" class="block dark no-underline left-nav-link ellipsis">Singly Linked List</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Trees
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/trees/binary-and-nary-trees/" class="block dark no-underline left-nav-link ellipsis">Binary/ N-ary Trees</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/trees/binary-search-tree/" class="block dark no-underline left-nav-link ellipsis">Binary Search Tree</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/trees/heapspriority-queues/" class="block dark no-underline left-nav-link ellipsis">Heaps/Priority Queues</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Advanced Data Structures
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li class="selected ">
+                                    
+                                    <a href="/practice/data-structures/advanced-data-structures/trie-keyword-tree/" class="block dark no-underline left-nav-link ellipsis">Trie (Keyword Tree)</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/advanced-data-structures/segment-trees/" class="block dark no-underline left-nav-link ellipsis">Segment Trees</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/" class="block dark no-underline left-nav-link ellipsis">Fenwick (Binary Indexed) Trees</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/advanced-data-structures/suffix-trees/" class="block dark no-underline left-nav-link ellipsis">Suffix Trees</a></li>
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/advanced-data-structures/suffix-arrays/" class="block dark no-underline left-nav-link ellipsis">Suffix Arrays</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+                    
+                    <li class="subtrack">
+                        <div class="subtopic-name darker regular weight-700 pointer">
+                            Disjoint Data Structures
+                        </div>
+                        <div class="subtopics-container">
+                            <ul class="no-list-style subtopics-list dark weight-400 regular">
+                                
+                                <li >
+                                    
+                                    <a href="/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/" class="block dark no-underline left-nav-link ellipsis">Basics of Disjoint Data Structures</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="subtrack-list-container">
+    <ul class="subtrack-list no-list-style">
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Arrays
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/arrays/1-d/" class="block dark no-underline left-nav-link ellipsis" title="1-D">1-D</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/arrays/multi-dimensional/" class="block dark no-underline left-nav-link ellipsis" title="Multi-dimensional">Multi-dimensional</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Stacks
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/stacks/basics-of-stacks/" class="block dark no-underline left-nav-link ellipsis" title="Basics of Stacks">Basics of Stacks</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Queues
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/queues/basics-of-queues/" class="block dark no-underline left-nav-link ellipsis" title="Basics of Queues">Basics of Queues</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Hash Tables
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/hash-tables/basics-of-hash-tables/" class="block dark no-underline left-nav-link ellipsis" title="Basics of Hash Tables ">Basics of Hash Tables </a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Linked List
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/linked-list/singly-linked-list/" class="block dark no-underline left-nav-link ellipsis" title="Singly Linked List">Singly Linked List</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Trees
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/trees/binary-and-nary-trees/" class="block dark no-underline left-nav-link ellipsis" title="Binary/ N-ary Trees">Binary/ N-ary Trees</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/trees/binary-search-tree/" class="block dark no-underline left-nav-link ellipsis" title="Binary Search Tree">Binary Search Tree</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/trees/heapspriority-queues/" class="block dark no-underline left-nav-link ellipsis" title="Heaps/Priority Queues">Heaps/Priority Queues</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Advanced Data Structures
+                    <i class="fa fa-angle fa-angle-up"></i>
+                </div>
+                <div class="subtopics-container ">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li class="selected ">
+                            
+                            
+                                <span class="block dark no-underline ellipsis left-nav-span" title="Trie (Keyword Tree)">Trie (Keyword Tree)</span>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/advanced-data-structures/segment-trees/" class="block dark no-underline left-nav-link ellipsis" title="Segment Trees">Segment Trees</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/" class="block dark no-underline left-nav-link ellipsis" title="Fenwick (Binary Indexed) Trees">Fenwick (Binary Indexed) Trees</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/advanced-data-structures/suffix-trees/" class="block dark no-underline left-nav-link ellipsis" title="Suffix Trees">Suffix Trees</a>
+                            
+                            </li>
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/advanced-data-structures/suffix-arrays/" class="block dark no-underline left-nav-link ellipsis" title="Suffix Arrays">Suffix Arrays</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+            
+            <li class="subtrack">
+                <div class="subtopic-name darker regular weight-700 pointer">
+                    Disjoint Data Structures
+                    <i class="fa fa-angle fa-angle-down"></i>
+                </div>
+                <div class="subtopics-container hidden">
+                    <ul class="no-list-style subtopics-list dark weight-400 regular">
+                        
+                        <li >
+                            
+                            
+                                <a href="/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/" class="block dark no-underline left-nav-link ellipsis" title="Basics of Disjoint Data Structures">Basics of Disjoint Data Structures</a>
+                            
+                            </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="right-section">
+            <div class="right-section-header">
+                <h1 class="dark no-margin larger-24 weight-600">Trie (Keyword Tree)</h1>
+                <ul class="no-list-style caps weight-700 regular tutorial-problems-tab tab-underline-blue">
+                    <li class="standard-margin-right tab">
+                        <span class="tab-name tab-dark inline-block no-underline selected"> Tutorial</span>
+                    </li>
+
+                    
+                    <li class="tab standard-margin-right">
+                        <a href="/practice/data-structures/advanced-data-structures/trie-keyword-tree/practice-problems/" class="tab-name tab-dark inline-block no-underline" id="practice-problems"> Problems</a>
+                    </li>
+                    
+                    
+                    <li class="clear"></li>
+                </ul>
+            </div>
+            <div class="right-section-content darker regular tutorial">
+                <div class="opacity-loader hidden">
+                    <div class="dots-loader"></div>
+                </div>
+                <p>Strings can essentially be viewed as the most important and common topics for a variety of programming problems. String processing has a variety of real world applications too, such as:</p>
+<ul>
+<li>Search Engines   </li>
+<li>Genome Analysis   </li>
+<li>Data Analytics  </li>
+</ul>
+<p>All the content presented to us in textual form can be visualized as nothing but just strings.  </p>
+<p><strong>Tries:</strong> </p>
+<p>Tries are an extremely special and useful data-structure that are based on the <em>prefix of a string</em>. They are used to represent the “Re<strong>trie</strong>val” of data and thus the name Trie.   </p>
+<p><strong>Prefix : What is prefix:</strong> </p>
+<p>The prefix of a string is nothing but any $$n$$ letters $$n \le |S|$$ that can be considered beginning strictly from the starting of a string. For example , the word “abacaba” has the following prefixes:  </p>
+<p>a<br />
+ab<br />
+aba<br />
+abac<br />
+abaca<br />
+abacab  </p>
+<p>A Trie is a special data structure used to store strings that can be visualized like a graph. It consists of nodes and edges. Each node consists of at max 26 children and edges connect each parent node to its children. These 26 pointers are nothing but pointers for each of the 26 letters of the English alphabet A separate edge is maintained for every edge.  </p>
+<p>Strings are stored in a top to bottom manner on the basis of their prefix in a trie. All prefixes of length 1 are stored at until level 1, all prefixes of length 2 are sorted at until level 2 and so on.   </p>
+<p>For example , consider the following diagram :
+<img alt="enter image description here" src="https://he-s3.s3.amazonaws.com/media/uploads/fb14630.png" /></p>
+<p>Now, one would be wondering why to use a data structure such as a trie for processing a single string? Actually, Tries are generally used on groups of strings, rather than a single string. When given multiple strings , we can solve a variety of problems based on them. For example, consider an English dictionary and a single string $$s$$, find the prefix of maximum length from the dictionary strings matching the string $$s$$. Solving this problem using  a naive approach would require us to match the prefix of the given string with the prefix of every other word in the dictionary and note the maximum. The is an expensive process considering the amount of time it would take. Tries can solve this problem in much more efficient way.    </p>
+<p>Before processing each Query of the type where we need to search the length of the longest prefix, we first need to add all the existing words into the dictionary.  A Trie consists of a special node called the root node. This node doesn't have any incoming edges. It only contains 26 outgoing edfes for each letter in the alphabet and is the root of the Trie.  </p>
+<p>So, the insertion of any string into a Trie starts from the root node. All prefixes of length one are direct children of the root node. In addition, all prefixes of length 2 become children of the nodes existing at level one.  </p>
+<p>The pseudo code for insertion of a string into a tire would look as follows:  </p>
+<pre class="prettyprint"><code>void insert(String s)
+{
+    for(every char in string s)
+    {
+        if(child node belonging to current char is null)
+        {
+            child node=new Node();
+        }
+        current_node=child_node;
+    }
+}
+</code></pre>
+<p>The pseudo code to check wether a single word exists in a dictionary of words or not is as follows:  </p>
+<pre class="prettyprint"><code>boolean check(String s)
+{
+    for(every char in String s)
+    {
+        if(child node is null)    
+        {
+            return false;
+        }
+    }
+    return true;
+}
+</code></pre>
+                <div class="align-left light italic small weight-400">Contributed by: <a href="/@anand.jaisingh" class="light" target="blank">Anand Jaisingh</a></div>
+            </div>
+
+            <div id="tutorial-problem" class="pagelet-inview" ajax="/pagelets/sub-topic/tutorial/trie-keyword-tree" target="tutorial-problem" loader="true"></div>
+            <div class="standard-margin">
+                <div id="comments-563-9" class="comments hidden"></div>
+                <div class="load-comments">
+                    <span>
+                        <a class="load-all-comments" ajax="/comment-action/load-comments/9/563/with-voting/with-sort/" target="comments-563-9"><i class='fa fa-comments result-icon'></i> View all comments</a>
+                    </span>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- include modal window for login/signup -->
+    
+        
+
+<div id="login-modal" class="modal-window smaller-modal hidden">
+    <div class="modal-header">
+        <div class="login-form align-center larger heading">Log in</div>
+        <div class="signup-form-div hidden align-center larger heading">Sign Up</div>
+        <div class="password-reset hidden align-center larger heading">Reset Password</div>
+    </div>
+    <div class="modal-content">
+
+        <div class="login-form">
+            
+                
+
+
+<div class="modal-social-login align-center">
+    
+        <div class="social-auth-row">
+            
+                <a url='/zeus/facebook/login/?display=popup&next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=facebook&source=practice&purpose=login' title="Facebook" class="button btn-facebook btn-medium show-popup inline-block margin-top-8 less-margin-right less-margin-bottom" minimal="true">
+            
+                <i class="fa fa-facebook"></i>
+                <span class="regular less-margin-left">
+                    Log in with Facebook
+                </span>
+            </a>
+
+            
+                <a url='/zeus/github/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=github&source=practice&purpose=login' title="Github" class="button btn-github btn-medium show-popup inline-block margin-top-8 less-margin-right" minimal="true">
+            
+                <i class="fa fa-github"></i>
+                <span class="regular less-margin-left">
+                    Log in with Github
+                </span>
+            </a>
+        </div>
+        
+            <a url='/zeus/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=google&source=practice&purpose=login' title="Google" class="button btn-google btn-medium show-popup margin-top-8 less-margin-right sign-up-btn-modified" minimal="true" style="display: block">
+        
+        <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/google_logo.png" alt="Google" style="vertical-align: middle">
+        <span class="regular medium-margin-left roboto-font-family">
+            Sign in with Google
+        </span>
+        </a>
+    
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+            
+            <form id="modal-login-form" name="login-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/login/">
+                
+
+
+
+
+    
+
+        
+
+        
+        <div class="wrapper small-wrapper">
+            
+            <input id="id_login" name="login" placeholder="Username or Email" type="text" required />
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required />
+        </div>
+        
+    
+    <input type="hidden" name="next" value="/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/"/>
+     <div>
+         <a href="#" class="link-3 show-hide-many float-right" show="password-reset" hide="login-form">Forgot Password?</a>
+        <div class="clear"></div>
+    </div>
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Logging In.." value="Log in &#xf0a9;" class="button btn-blue fontawesome btn-largest weight-600 large"/>
+    </div>
+
+    
+    <script type="text/javascript">
+        try{
+            grecaptcha.render('nocaptcha-recaptcha', {
+                'sitekey' : ''
+            });
+        }
+        catch(err){}
+    </script>
+    
+
+
+
+            </form>
+            
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Don't have an account? <a href="#" class="link-13 show-hide-many regular" show="signup-form-div" hide="login-form"> Sign up</a>
+            </div>
+            
+        </div>
+
+        <div class="signup-form-div hidden">
+            
+                
+
+
+<div class="modal-social-signup align-center">
+    
+        <div class="social-auth-row">
+            
+                <a id="social-login-button-fb" url='/zeus/facebook/login/?display=popup&next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=facebook&source=practice&purpose=signup' title="Facebook" class="button btn-facebook btn-medium show-popup inline-block margin-top-8 less-margin-right hidden" minimal="true">
+            
+                <i class="fa fa-facebook"></i>
+                <span class="regular weight-600 less-margin-left">
+                    Facebook
+                </span>
+            </a>
+            <a class="button btn-facebook btn-medium inline-block margin-top-8 less-margin-right less-margin-bottom social-login-button social-login-button-fb show-modal" target="gdpr-modal">
+                <i class="fa fa-facebook"></i>
+                <span class="regular less-margin-left">
+                    Sign up with Facebook
+                </span>
+            </a>
+
+            
+                <a id="social-login-button-github" url='/zeus/github/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=github&source=practice&purpose=signup' title="Github" class="button btn-github btn-medium inline-block margin-top-8 less-margin-right show-popup hidden" minimal="true">
+            
+                <i class="fa fa-github"></i>
+                <span class="regular weight-600 less-margin-left">
+                    Github
+                </span>
+            </a>
+            <a class="button btn-github btn-medium inline-block margin-top-8 less-margin-right social-login-button social-login-button-github show-modal" target="gdpr-modal">
+                <i class="fa fa-github"></i>
+                <span class="regular less-margin-left">
+                    Sign up with Github
+                </span>
+            </a>
+        </div>
+
+        
+            <a id="social-login-button-g" url='/zeus/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/&update=google&source=practice&purpose=signup' title="Google" class="button btn-google btn-medium inline-block margin-top-8 less-margin-right show-popup hidden" minimal="true">
+        
+            <i class="fa fa-google-plus"></i>
+            <span class="regular weight-600 less-margin-left">
+                Google
+            </span>
+        </a>
+        <a class="button btn-google btn-medium margin-top-8 less-margin-right social-login-button social-login-button-g show-modal sign-up-btn-modified" style="display: block" target="gdpr-modal">
+            <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/google_logo.png" alt="Google" style="vertical-align: middle">
+            <span class="regular medium-margin-left roboto-font-family">
+                Sign up with Google
+            </span>
+        </a>
+    
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+            
+            
+            <form id="modal-signup-form" name="signup-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/hackerearth/signup/?source=practice&next=/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">
+            
+                
+
+
+
+    
+        
+
+        
+        <div class="wrapper small-wrapper float-left">
+            <input id="id_first_name" maxlength="30" name="first_name" placeholder="First Name" type="text" required />
+        </div>
+
+        <div class="wrapper small-wrapper float-right">
+            <input id="id_last_name" maxlength="30" name="last_name" placeholder="Last Name" type="text" />
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="wrapper small-wrapper">
+            <input id="id_email" maxlength="75" name="email" placeholder="Email" type="text" required />
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required />
+        </div>
+    
+
+    <div class="align-center medium-margin">
+        <button id="signup-start-now" class="button btn-blue fontawesome btn-largest weight-600 large disabled" target="gdpr-modal">Start Now</button>
+    </div>
+
+    <style>
+  #gdpr-modal {
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+<div id="gdpr-modal" class="modal-window smaller-modal hidden">
+  
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+  
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+  
+<div class="modal-header">HackerEarth’s Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+            </form>
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Have an account? <a href="#" class="link-13 show-hide-many regular" show="login-form" hide="signup-form-div"> Log in</a>
+            </div>
+        </div>
+
+        <div class="password-reset hidden">
+            <form name="password-reset" method="POST" class="ajax-form" ajax="/AJAX/password/reset/?next=/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">
+                
+
+
+
+
+    
+    <p class="dark large"> A password reset link will be sent to the following email id</p>
+    
+    <div class="wrapper">
+        
+        <input id="id_email" name="email" placeholder="Email" size="30" type="text" required />
+    </div>
+    
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Sending.." value="Send Password Reset Link" class="button btn-blue btn-largest weight-600 large"/>
+    </div>
+
+
+            </form>
+        </div>
+
+    </div>
+    <div class="gdpr-modal-content hidden">
+        
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+  
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+  
+<div class="modal-header">HackerEarth’s Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+    </div>
+</div>
+
+    
+
+    <!-- override this block where we do not want the footer -->
+    
+    
+
+    
+
+
+
+
+
+<footer class="marketing-footer footer-large">
+    <div class="primary-footer">
+        <div class="standard-margin-bottom contact-wrapper">
+            <div class="standard-margin-bottom">
+                <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/assessment_marketing/he-footer-logo.svg" />
+            </div>
+            <ul class="no-style">
+                <li>+1-650-461-4192</li>
+                <li>
+                    <a href="mailto:contact@hackerearth.com" target="_blank">
+                        contact@hackerearth.com
+                    </a>
+                </li>
+            </ul>
+            <ul class="social-links-container no-style">
+                <li>
+                    <a href="https://www.facebook.com/HackerEarth/" target="_blank">
+                        <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/assessment_marketing/facebook-logo.svg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/HackerEarth?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+                        <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/assessment_marketing/twitter-logo.svg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/company/hackerearth/?originalSubdomain=in" target="_blank">
+                        <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/assessment_marketing/linkedin-logo.svg" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCYU6nvKyRYnE5kiG9JXkXpA" target="_blank">
+                        <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/assessment_marketing/youtube-logo.svg" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="standard-margin-bottom">
+            <h3 class="footer-heading">For Developers</h3>
+            <ul class="no-style">
+                <li>
+                    <a href="https://www.hackerearth.com/practice/" target="_blank">
+                        Practice programming
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/getstarted-competitive-programming/" target="_blank">
+                        Complete reference to competitive programming
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/challenges/competitive/" target="_blank">
+                        Competitive coding challenges
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/practice/codemonk/" target="_blank">
+                        Code Monk
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/university/" target="_blank">
+                        Start a programming club
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="standard-margin-bottom">
+            <h3 class="footer-heading">Developer Resources</h3>
+            <ul class="no-style">
+                <li>
+                    <a href="https://www.hackerearth.com/blog/developers/" target="_blank">
+                        Developers blog
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/practice/notes/kaushik.mv3/learn-to-code-by-competitive-programming/" target="_blank">
+                        Learn to code by competitive programming
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/docs/wiki/developers/hackerearth-contest/" target="_blank">
+                        Developers wiki
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/community-hackathons/resources/e-books/guide-to-organize-hackathon/#types-of-hackathons" target="_blank">
+                        How to conduct a hackathon
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="standard-margin-bottom">
+            <h3 class="footer-heading">For Business</h3>
+            <ul class="no-style">
+                <li>
+                    <a href="https://www.hackerearth.com/recruit/" target="_blank">
+                        Assess developers
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/recruit/facecode/" target="_blank">
+                        Conduct remote interviews
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/recruit/hiring/university-hiring/" target="_blank">
+                        Assess university talent
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/community-hackathons/" target="_blank">
+                        Organize hackathon
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="standard-margin-bottom">
+            <h3 class="footer-heading">Company</h3>
+            <ul class="no-style">
+                <li>
+                    <a href="https://www.hackerearth.com/team/" target="_blank">
+                        About us
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/press/" target="_blank">
+                        Press
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/companies/hackerearth/jobs/" target="_blank">
+                        Careers
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.hackerearth.com/reach-us/" target="_blank">
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="https://help.hackerearth.com/hc/en-us" target="_blank">
+                        Technical support
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="secondary-footer no-style">
+        <li>
+            <span>
+                <span>Site Language: </span>
+                <select id="global-locale-switcher" class="nice-select" ajax_url="/users/update-locale-setting/" page_url="/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/" onchange="changeUserLocale(this, 'en-us', false)">
+                        
+                        
+                        <option value="ru" url="/ru/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">русский язык</option>
+                        
+                        
+                        
+                        <option value="fr" url="/fr/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">Français</option>
+                        
+                        
+                        
+                        <option value="de" url="/de/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">Deutsch</option>
+                        
+                        
+                        
+                        <option value="zh" url="/zh/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">中文</option>
+                        
+                        
+                        
+                        <option value="en-us" selected="selected" url="/en-us/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">English</option>
+                        
+                        
+                        
+                        <option value="pt-br" url="/pt-br/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">Português</option>
+                        
+                        
+                        
+                        <option value="ja" url="/ja/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/">日本語</option>
+                        
+                        
+                </select>
+            </span>
+        </li>
+        <li>
+            
+            
+                &copy; 2020 HackerEarth All rights reserved
+            
+        </li>
+        <li>
+            <a href="https://www.hackerearth.com/terms-of-service/" target="_blank">
+                Terms of Service
+            </a>
+        </li>
+        <li>
+            <a href="https://www.hackerearth.com/privacy/" target="_blank">
+                Privacy Policy
+            </a>
+        </li>
+    </ul>
+</footer>
+
+
+
+    
+
+    <div class="expand-box" id="recruiter-box">
+        <div class="down-arrow"></div>
+        <ul class="no-margin">
+            
+            
+            
+            <a href="/logout/?next=/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/"><li>Logout</li></a>
+        </ul>
+    </div>
+
+    
+
+    <!-- Include notifications box -->
+    
+
+
+
+<div class="expand-box" id="notifications-box">
+    <div class="down-arrow"></div>
+    <div class="notifications-title-container">
+        <div class="float-left weight-600">Notifications</div>
+        <div class="float-right">
+            <a href="#" ajax="https://www.hackerearth.com/notifications/AJAX/mark-all-read/" class="notif-mark-all-read link smaller clicky-ajax">Mark All as Read</a>
+        </div>
+        <div class="clear"></div>
+    </div> <!-- notifications-title-container -->
+
+    <div class="notifications-container nice-scrollbar" id="notifications-container">
+    </div> <!-- notifications-container -->
+
+    <div class="smaller caps weight-600 align-center less-margin-2 less-margin-2-bottom">
+        <a class="link" href="https://www.hackerearth.com/notifications/">View All Notifications</a>
+    </div>
+</div> <!-- notifications-box -->
+
+
+    <!-- Load notification icon with unread count -->
+    <div id="header-notif-icon-trigger" class="load-pagelet hidden" target="header-notif-icon" ajax="/notifications/pagelets/header-notif-icon-count/" show-loader="false"></div>
+
+    
+    <!-- Load live events widget -->
+    <div id="live-events-trigger" class="load-pagelet hidden" target="live-events-trigger-data" ajax="/AJAX/live_events_widget_count/" show-loader="false"></div>
+    
+
+    
+
+    
+
+    
+    
+
+        
+        
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="bigpipe-json" class="hidden">
+            
+        </div>
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="user-prompt-json" class="hidden">
+            
+        </div>
+
+        <!-- Store any html returned for feedback popup -->
+        <div id="user-feedback-popup" class="hidden"></div>
+
+        
+            <div id="common-notification">
+            </div>
+        
+
+        <!-- ping url for user presence -->
+        <div id="ghost-ping-url" class="hidden" ajax="/ghost/ping/"></div>
+
+        
+        
+
+        
+        <div id="external-link-modal" class="modal-window very-large-modal">
+            <div class="modal-content large dark align-left">
+                <div id="external-link-content-wrapper">
+                    <pre></pre>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- All the scripts go here -->
+        <script>
+            
+            var CURRENT_PATH = "https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/";
+            var HISTORY = '';
+            var DEFAULT_REAL_NUMBER_PRECISION = 2;
+            var DECIMAL_PRECISION_ERROR_TEXT = "Only {decimal_limit} decimal places allowed";
+            var SOMETHING_WENT_WRONG_ERROR_TEXT = "Something went wrong. Please try again later.";
+
+            // Make code constants available globally in JS
+            var MAP_LANG_TO_NAME = {"SCALA_2118": "Scala 2.11.8", "LUA": "Lua", "PASCAL": "Pascal", "CSHARP": "C#", "CPP": "C++", "PYTHON3": "Python 3", "POSTGRESQL": "PostgreSQL", "KOTLIN": "Kotlin", "SCALA": "Scala", "PERL": "Perl", "HASKELL": "Haskell", "D": "D", "CPP14": "C++14", "CPP17": "C++17", "R": "R(RScript)", "CPP11": "C++11", "GO": "Go", "RUBY": "Ruby", "BASH": "Bash", "GROOVY": "Groovy", "LOLCODE": "LOLCODE", "LISP": "Lisp", "Text": "Text", "WHENEVER": "Whenever", "MYSQL": "MySQL", "OBJECTIVEC": "Objective-C", "PHP": "PHP", "JAVASCRIPT_UI": "JavaScript", "PYTHON": "Python", "JAVASCRIPT": "JavaScript(Rhino)", "SWIFT_4_1": "Swift-4.1", "vp": "N/A", "TEXTFILE": "Text", "JAVA8": "Java 8", "JAVASCRIPT_NODE": "JavaScript(Node.js)", "RACKET": "Racket", "HTML": "HTML", "SWIFT": "Swift", "RUST": "Rust", "FSHARP": "F#", "C": "C", "TYPESCRIPT": "TypeScript", "ORACLE_DB": "Oracle_Db", "OCAML": "OCaml", "OCTAVE": "Octave", "CLOJURE": "Clojure", "BEFUNGE": "Befunge", "CSS": "CSS", "ERLANG": "Erlang", "JAVA": "Java", "LISP_SBCL": "Lisp (SBCL)", "JULIA": "Julia", "VB": "Visual Basic", "MSSQL": "MSSQL"};
+            var MAP_NAME_TO_LANG = {"Lisp (SBCL)": "LISP_SBCL", "TypeScript": "TYPESCRIPT", "Java": "JAVA", "Scala": "SCALA", "JavaScript": "JAVASCRIPT_UI", "Perl": "PERL", "Lua": "LUA", "JavaScript(Rhino)": "JAVASCRIPT", "MySQL": "MYSQL", "Erlang": "ERLANG", "LOLCODE": "LOLCODE", "HTML": "HTML", "JavaScript(Node.js)": "JAVASCRIPT_NODE", "C#": "CSHARP", "R(RScript)": "R", "C++14": "CPP14", "Rust": "RUST", "Octave": "OCTAVE", "Ruby": "RUBY", "Bash": "BASH", "Groovy": "GROOVY", "C": "C", "Python 3": "PYTHON3", "Lisp": "LISP", "Kotlin": "KOTLIN", "Oracle_Db": "ORACLE_DB", "F#": "FSHARP", "N/A": "vp", "C++": "CPP", "Racket": "RACKET", "Objective-C": "OBJECTIVEC", "Swift": "SWIFT", "CSS": "CSS", "D": "D", "Clojure": "CLOJURE", "Befunge": "BEFUNGE", "Java 8": "JAVA8", "Whenever": "WHENEVER", "PostgreSQL": "POSTGRESQL", "Text": "TEXTFILE", "Swift-4.1": "SWIFT_4_1", "OCaml": "OCAML", "Julia": "JULIA", "C++17": "CPP17", "Python": "PYTHON", "Pascal": "PASCAL", "Haskell": "HASKELL", "Scala 2.11.8": "SCALA_2118", "C++11": "CPP11", "Go": "GO", "Visual Basic": "VB", "PHP": "PHP", "MSSQL": "MSSQL"};
+        </script>
+
+        
+
+        <!-- alljs: static_media/js/jquery-1.7.min.patched.js static_media/js/jquery.color.js static_media/js/jquery.elastic.js static_media/js/ajaxSend.js  static_media/js/jquery.inview.js  static_media/js/tooltip/jquery.tipTip.modified.js  static_media/offline/offline.min.js  static_media/js/watermark.min.js  static_media/history.js?v=0.1/scripts/bundled/html4html5/jquery.history.js  static_media/js/jquery.nicescroll.js  static_media/simplemodal/simplemodal.js static_media/js/jquery.sticky.js static_media/js/pusher.min.js static_media/js/ifvisible.min.js static_media/ghost/ghost.js static_media/feeds/feeds.js static_media/base/progress_bar.js -->
+        
+
+
+<script>
+    UPLOADING_TEXT = "Uploading";
+    UPLOADED_TEXT = "Uploaded";
+    SAVING_TEXT = "Saving..";
+    UPLOAD_SUCCESS_MESSAGE = "File saved successfully.";
+    UPLOAD_ERROR_MESSAGE = "An error occured while saving, please try again in sometime.";
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/alljs.86329a9e20af.js" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/base1.0.1.a5285eb3cb42.js" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/bigpipe/bigpipe.1df36f9848f5.js" crossorigin="anonymous" ></script>
+        
+
+
+<script type="text/javascript">
+var CONFIRM_COMMENT_DELETE = "Are you sure, you want to delete comment?";
+var COMMENT_NOT_DELETED = "Comment could not be deleted!";
+var CONFORM_COMMENT_MARK_SPAM = "Are you sure, you want to mark this comment as spam?";
+var COMMENT_NOT_MARKED_SPAM = "Comment could not be marked as spam!";
+var ENTER_15_CHARS = "Enter at least 15 characters";
+var JUST_X_MORE = "Just {count} more to go";
+</script>
+        <script>
+            var MAP_MARKER_SIGNUP_IMAGE = 'https://static-fastly.hackerearth.com/static/metrics/map-marker.png';
+            var MAP_MARKER_LOGIN_IMAGE = 'https://static-fastly.hackerearth.com/static/metrics/map-marker-login.png';
+            var AJAX_URL = '';
+        </script>
+        
+<script>
+    // firestore credentials
+    var firebaseConfig = {
+        apiKey:'AIzaSyD7oH2r4iyvysFx47-IVwrzdwIuw7Ici90',
+        authDomain:'he-production.firebaseapp.com',
+        databaseURL:'https://he-production.firebaseio.com',
+        projectId:'he-production',
+        storageBucket:'he-production.appspot.com',
+        messagingSenderId:'100736274227',
+        appId:'1:100736274227:web:fdd60d6929555af4d3b846'
+    };
+    window.firebaseConfig = firebaseConfig;
+</script>
+
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/firebase/firebase-app.a75f50850a09.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/firebase/firebase-firestore.ac7f12977426.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/realtime/firestore_realtime.551dabc1780c.js" crossorigin="anonymous" ></script>
+
+
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/user_prompts/userprompt.5c9513e3eecb.js" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/history.639daea78701.js" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/commentUtils.dadb11872038.js" crossorigin="anonymous" ></script>
+
+        
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        
+
+        
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/offline/offline.min.7ce195ae7071.js" crossorigin="anonymous" ></script>
+
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_SVG"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none",
+        jax: ["input/TeX", "output/SVG", "output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [['$$','$$'], ['\\(', '\\)']],
+            displayMath: [['$$$', '$$$'], ['\\[', '\\]']],
+            preview: "none"
+        },
+        SVG: {
+            useGlobalCache: false
+        },
+    });
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/mathjax.3489d4a1e549.js" crossorigin="anonymous" ></script>
+<script type="text/javascript">
+    window.addEventListener("load", function() {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    });
+</script>
+
+        <script>
+            Offline.options = {
+                interceptRequests: false,
+                requests: false,
+            };
+        </script>
+
+        
+
+        
+
+
+<script>
+
+$(document).ready(function (){
+    $('#header-notif-icon-trigger').click();
+
+    
+    $('#live-events-trigger').click();
+    
+
+    
+    
+    
+
+    
+
+    // show kone ge widget if not visited
+    
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    
+    var m_links = {};
+    var m_elements = {
+        '#modal-login-form input[type=submit]': 'Modal Email Login',
+        '#modal-signup-form input[type=submit]': 'Modal Email Signup',
+        '.modal-social-login .btn-facebook': 'Modal Facebook Login',
+        '.modal-social-login .btn-google': 'Modal Google Login',
+        '.modal-social-signup .btn-facebook': 'Modal Facebook Signup',
+        '.modal-social-signup .btn-google': 'Modal Google Signup',
+        '.top-banner .login-banner a': 'Signup after banner click',
+    };
+    
+    for (var key in m_elements) {
+        $(key).live('click', {'key': key }, function(e) {
+            var key = e.data.key;
+            mixpanel.track('Click', {'name': m_elements[key]});
+        });
+    }
+    for (var key in m_links) {
+        mixpanel.track_links(key, 'Click', {'name': m_links[key]});
+    }
+});
+</script>
+
+
+
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/search/search.1.0.7d336476c653.js" crossorigin="anonymous" defer></script>
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/gdpr-modal.e3306212a68a.js" crossorigin="anonymous" ></script>
+
+
+
+        <script>
+            // Used in search
+            var is_user_logged_in = false;
+        </script>
+
+        
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/detect_timezone.12f6ba68823f.js" crossorigin="anonymous" ></script>
+        <script>
+
+            function setTimezoneCookie(detected_user_tz) {
+                /* Sets the detected user timezone as a cookie in the browser.
+                   If someone changes it or removes it, a sanity check is
+                   performed and the cookie is reset.
+
+                   This cookie is set for ready availability of user timezone
+                   in the backend.
+                */
+
+                const USER_TIMEZONE_COOKIE = 'user_tz';
+                // Try to get the existing user timezone cookie stored
+                // in the browser.
+                user_tz = readCookie(USER_TIMEZONE_COOKIE);
+
+                // Flag to determine whether a new cookie has to be created.
+                create_cookie = false;
+
+                if(user_tz) {
+                    if(user_tz !== detected_user_tz) {
+                        // If someone has changed the cookie in some way, we
+                        // set a new cookie.
+                        eraseCookie(USER_TIMEZONE_COOKIE);
+                        create_cookie = true;
+                    }
+                } else {
+                    create_cookie = true;
+                }
+
+                // Create a new cookie if create_cookie flag is set.
+                createCookie(USER_TIMEZONE_COOKIE, detected_user_tz, 1);
+
+            }
+            $(document).ready(function(){
+                var timezone = jstz.determine_timezone(); // Now you have an instance of the TimeZone object.
+                // Set as a cookie in browser for easy access in backend.
+                setTimezoneCookie(timezone.name());
+
+                // Set as a js variable for easy access across frontend.
+                USER_TIMEZONE = timezone.name()
+
+                
+
+                
+
+                
+                
+                
+                
+                
+
+                
+
+                
+                    $.ajax({
+                        type: "POST",
+                        url:"/users/AJAX/set-timezone/",
+                        data: {
+                        'timezone': timezone.name(),
+                        },
+                    });
+                
+            });
+        </script>
+        
+        
+
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                //mixpanel delegate links custom method
+                mixpanel.delegate_links = function (parent, selector, event_name, properties) {
+                    properties = properties || {};
+                    parent = parent || document.body;
+                    parent = $(parent);
+                    parent.on('click', selector, function (event) {
+                        var new_tab = event.which === 2 || event.metaKey || event.target.target === '_blank' || this.target === '_blank';
+                        properties.url = event.target.href || this.href;
+                        function callback() {
+                            if (new_tab) {
+                                return;
+                            }
+                            window.location = properties.url;
+                        }
+                        if (!new_tab) {
+                            event.preventDefault();
+                            setTimeout(callback, 300);
+                        }
+                        mixpanel.track(event_name, properties, callback);
+                    });
+                };
+            });
+            
+        </script>
+
+        
+    
+
+
+
+<script type="text/javascript">
+    var CodeEditorText = {
+        submit : "SUBMIT",
+        compileSubmit : "Compile & Test",
+        compileSubmitForSQL : "Execute & Test",
+        provideCustomInput : "Provide custom input",
+        keybindingNormal : "Normal",
+        keybindingVim : "Vim",
+        keybindingEmacs : "Emacs",
+        intellisense: "Intellisense",
+        writeOrUploadCode : "Enter your code or <a> <i className='fa fa-upload'></i> Upload your code</a> as file.",
+        overWriteExistingTemplate : "Your existing template will be over-written. Are you sure you want to update?",
+        updateDefaultTemplate : "Update default template",
+        takeMeBack: "Nope take me back",
+        yes: "Yes",
+        selectLanguage: "Language",
+        save : "Save",
+        loading: "Loading",
+        autoCompleteInfo: "Press Ctrl-space for autocomplete suggestions.",
+        autoCompleteServerInfo: "Press Ctrl-space for autocomplete suggestions (accuracy dependent on connection stability).",
+        goFullScreen: "Go full screen",
+        exitFullScreen: "Exit full screen",
+        lightTheme: "Light",
+        darkTheme: "Dark",
+        unsavedCodeWarning: "You may loose all the unsaved changes!",
+        savedText: "Saved",
+        errorInSavingText: "Error in saving",
+        saveText: "Save",
+        setFavoriteLangText: "Set {0} as favorite",
+        setDefaultTemplateText: "Set as default template",
+        selectLanguageText: "Select Language",
+        themeHeader: "Theme",
+        helpText: "Just one more thing to do",
+        editorModeHeader: "Editor Mode",
+        editorFontHeader: "Font",
+        editorTabSpaceHeader: "Tab Space",
+        editText: "Edit",
+        submitText: "Submit",
+        playText: "Play",
+        defaultBot: "Default Bot",
+        fetchFailure: "A server error has occurred. You can continue writing code or attempt any other question and try again after a while.",
+        fetchTimedout: "We have received your submission and it is being evaluated.",
+        multiEditModeIndicator: "Multiline editing is enabled. Press esc to turn it off.",
+        favLangMsg: "has been set as your preferred language.",
+        defaultCodeMsg: "code template has been updated.",
+    }
+</script>
+
+    
+
+
+<script type="text/javascript">
+var CODE_PLAYER_VIDEO_UNAVAILABLE = "Video unavailable.";
+</script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/google-code-prettify/prettifyall.b06a7696b7e1.js" crossorigin="anonymous" ></script>
+    
+
+
+
+<script type="text/javascript">
+
+
+var IMAGE_UPLOAD_POPUP_STRINGS = {
+    click_browse: 'click browse to choose an image from your computer',
+    from_my_computer: 'from my computer',
+    from_the_web: 'from the web',
+    cancel: 'Cancel',
+    upload: 'Upload',
+    imgur_link: 'image hosting by',
+    insert_image: 'Insert Image',
+    incorrect_file_format: 'You have not selected any file or format is not supported',
+    uploading: 'Uploading ...'
+}
+
+
+</script>
+
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/markdown/Markdown.All.055870070b84.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/problems/fullscreen.eefd4bb795b5.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/keyboard.02978b283edd.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/problems/problem.206a99069eee.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/problems/problem_topic.019e7b6e4cfa.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/penta/penta.87bb05fea0d9.js" crossorigin="anonymous" ></script>
+
+    <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+        var b=document.getElementsByTagName("script")[0];
+        a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0021/3865.js?"+Math.floor(new Date().getTime()/3600000);
+        a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+
+        $(document).ready(function(){
+            
+
+            var url = '/AJAX/last_visited_practice/';
+            var location = window.location.href;
+            var params = {
+                track : 'Data Structures',
+                topic : 'Advanced Data Structures',
+                sub_topic :'Trie (Keyword Tree)',
+                url : encodeURI(location)
+            }
+            send_url(url,params);
+            });
+            function basicPopup(url, provider) {
+                if (provider == "twitter"){
+                    url = 'https://twitter.com/home?status='+escape($('#tweet-msg-box').val());
+                }
+                popupWindow = window.open(url,'popUpWindow','height=500,width=500,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes');
+            }
+            $(".tutorial-completed-close").live('click', function(){
+                $(".tutorial-completed-wrap").slideUp(1000);
+            });
+
+    </script>
+
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/sub-editor/vendors.5ca303ae0957.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/sub-editor/monaco-editor-core.86a29f5747f5.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/sub-editor/brace-vendors.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/sub-editor/autocomplete-all.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/sub-editor/sub-editor.7a5ffe870f6e.js" crossorigin="anonymous" ></script>
+
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/timeline/controller.b244860907a5.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/timeline/util.350eec762462.js" crossorigin="anonymous" ></script>
+    <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/timeline/plugins/codevideo/code_player.efbaf31cc0ed.js" crossorigin="anonymous" ></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Hackerearth",
+                "item": "https://www.hackerearth.com"
+            },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Practice",
+                "item": "https://www.hackerearth.com/practice/"
+            },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Data Structures",
+                "item": "https://www.hackerearth.com/practice/data-structures/"
+            },{
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Advanced Data Structures",
+                "item": "https://www.hackerearth.com/practice/data-structures/advanced-data-structures/"
+            },{
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Trie (Keyword Tree)",
+                "item": "https://www.hackerearth.com/practice/data-structures/advanced-data-structures/trie-keyword-tree/"
+            }]
+        }
+    </script>
+
+
+        
+        <!-- mixpanel analytics start -->
+        <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);mixpanel.init("4c30b8635363027dfb780d5a61785112");
+        </script>
+        <!-- mixpanel analytics end -->
+        <script type="text/javascript">
+            
+                
+                    mixpanel.unregister("username");
+                    mixpanel.unregister("email");
+                    mixpanel.unregister("date_of_joining");
+                    mixpanel.unregister("user_bucket");
+                    mixpanel.unregister("company");
+                    mixpanel.unregister("is_recruiter");
+                    mixpanel.register({
+                        "url_path": "/practice/data-structures/advanced-data-structures/trie-keyword-tree/tutorial/"
+                    });
+                
+            
+        </script>
+        
+
+        
+        
+        <div id="fb-root"></div>
+        <script>
+            <!-- facebook button -->
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            <!-- twitter button -->
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            <!-- google+ button -->
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+        
+
+        
+            
+
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/cookie_consent/cookiebar.ffe531fab344.css"/>
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/cookie_consent/cookiebar.70181766db90.js" crossorigin="anonymous" ></script>
+
+
+        
+
+        
+            
+        
+
+        
+            <!-- Hackerearth Zendesk Widget -->
+
+
+
+
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/customer-support-widget.bedd5221a38e.css"/>
+
+<script>
+    var COUNTRY_CODE = "PK";
+    var TRIAL_DAYS_LEFT =  0 ;
+    var INTERCOM_APP_ID = 'nofrzq7u';
+    var IS_INTERCOM_FEATUTRE_ENABLE = "True";
+
+    var isRecruiterDashboard = false;
+    var zESettingsRecruiterDashboard = {
+        webWidget: {
+            launcher: {
+                label: {
+                    "en-US": "",
+                    "*": "",
+                }
+            },
+            offset: {
+                horizontal: "-100px", /* To hide actual launcher widget */
+                vertical: "70px"
+            },
+            position: {
+                horizontal: 'right',
+                vertical: 'top'
+            }
+        }
+    };
+
+    var zESettingsDefault = {
+        webWidget: {
+            launcher: {
+                label: {
+                    "en-US": "",
+                    "*": "",
+                }
+            },
+            offset: {
+                horizontal: "-100px", /* To hide actual launcher widget */
+            }
+        }
+    };
+    if(isRecruiterDashboard) {
+       window.zESettings = zESettingsRecruiterDashboard;
+    } else {
+        window.zESettings = zESettingsDefault;
+    }
+    /*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="hackerearth.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+    /*]]>*/
+
+    var ZENDESK_LOCALE = "en-US";
+    var USER_EMAIL = "";
+    var USER_NAME = "";
+    var ATTACHMENT_LABEL = "Attachments (Optional)";
+    var DESCRIPTION_LABEL = "How can we help you, {name}?";
+
+    
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/customer-support-widget.df6b5efa9ec6.js" crossorigin="anonymous" defer></script>
+
+
+    <div class="customer-support-icon">
+        <p>?</p>
+    </div>
+
+
+        
+    </body>
+</html>
