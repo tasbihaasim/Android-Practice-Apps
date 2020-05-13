@@ -9,6 +9,7 @@ There are certain building blocks of android development that every developer mu
 
 - Writing data on Firebase database
 - Reading data from Firebase database
+- click [here](Medical.pdf) to see what the app looks like.
 
 2. [Percentage Calculator](percentage_calculator): It is a simple app that takes input in form of students' grades, calculates percentage and final grades and then allows the user (a teacher) to send result to parents. Building blocks used:
 
